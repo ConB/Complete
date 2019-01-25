@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="apple-mobile-web-app-title" content="My App">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="viewport" content="viewport-fit=cover,width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+      <title>Forum</title>
+      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+      <script src="assets/plugins/select2/js/select2.min.js"></script>
+      <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css"" />   
+      
+      <link rel="stylesheet" href="assets/style.css" />
+   </head>
+   <body class="color-lighter bg-light homepage">
+      <div id="Header">
+    <div class="top-row bg-dark">
+		<div class="container top-header">
+			<div class="pull-left">
+				<form class="navbar-form" role="search" action="?view=search">
+				    <div class="input-group add-on">
+				      <input class="form-control" placeholder="Search" name="qry" id="search" type="text">
+				      <div class="input-group-btn">
+				        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+				      </div>
+				    </div>
+				  </form>
+			</div>
+
+			<div class="pull-right">
+			<div id="login-link">
+				<i class="fa fa-sign-in fa-lg color-focus"></i> <a onclick="$('#login-box').toggleClass('active');return false;" href="#login-box" class="login-window color-light" title="Login">Login</a>
+					<div id="login-box" class="login-popup">
+					<div class="arrow-up"></div>
+					<form method="post" action="login.php" class="quick-login">
+					<fieldset>
+					<div class="navbar_username_outer">
+					<label for="username">Username:</label>&nbsp;<br><input type="text" name="username" id="navbar_username" size="10" class="form-control" title="Username">
+					</div>
+					<div class="navbar_password_outer">
+					<label for="password">Password:</label>&nbsp;<br><input type="password" name="password" id="navbar_password" size="10" class="form-control" title="Password">
+					</div>
+					<div class="login-buttons">
+					<input type="submit" name="login" value="Login" class="button2 button-style">
+					<input type="hidden" name="redirect" value="/Forum/forum/">
+					<input type="checkbox" name="autologin" id="autologin">&nbsp;<label id="autologin_label" for="autologin">Log me on automatically each visit</label>
+					</div>
+					</fieldset>
+					</form>
+					<div class="forgot-pass"><a href="forgot-password.php">I forgot my password</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container main-menu">
+		<div class="pull-left">
+			<div id="site-logo">
+				<a href="#" title="Board index" id="logo"><img src="assets/img/site_logo.svg" width="164" height="42" alt="" title=""></a>
+			</div>
+		</div>
+		<div class="pull-right">
+			<a href="" class="button-style">Home</a>
+			<a href="faq.php" class="button-style">FAQ</a>
+		</div>
+	</div>
+	<div class="subheader">
+		<h1 class="site-name color-light">PixelGoose.com</h1>
+		<p class="site-description">Premium styles for phpBB3</p>
+	</div>
+</div>      
+      <div class="container">
+ <ul class="navlinks">
+    <li id="breadcrumbs"><i class="fa fa-home"></i> <a href="" class="color-focus">Board index</a> </li>
+ </ul>
+</div>
+<div class="container" id="Content">
+	<div class="row">
+		<div class="col-md-9 col-sm-12 col-xs-12 left-content">
+			<div class="panel panel-default panel-shadow categories">
+			    <div class="panel-heading bg-focus">
+			    	<div class="row">
+			    	    <div class="col-md-7 col-sm-12 col-xs-12">Your first category</div>
+			    	    <div class="col-md-1 col-sm-12 col-xs-12">Topics</div>
+			    	    <div class="col-md-1 col-sm-12 col-xs-12">Posts</div>
+			    	    <div class="col-md-3 col-sm-12 col-xs-12">Last post</div>
+			    		
+			    	</div>
+			    </div>
+			    <div class="panel-body">
+					<div class="row cate-item">
+						<div class="col-md-7 col-sm-12 col-xs-12 title"  style="background-image: url(https://phpbb3.pixelgoose.com/styles/marina_teal/imageset/forum_read.svg);background-repeat: no-repeat;">
+							<div><a href="?view=viewforum">Ideas and Feature Requests</a></div>
+							<p>Description of your first forum.</p>
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 topics">
+							4
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 posts">
+							9
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12 datetime">
+							<span>
+								<dfn>Last post</dfn> by <a href="#" class="color-focus">lutvia</a>
+								<a href="#" title=""><i class="fa fa-arrow-right grey"></i></a> <br>Wed Apr 09, 2014 2:28 pm</span>	
+						</div>
+					</div>
+					<div class="row cate-item">
+						<div class="col-md-7 col-sm-12 col-xs-12 title"  style="background-image: url(assets/img/forum_read.svg);background-repeat: no-repeat;">
+							<div><a href="?view=viewforum">Plugin Development</a></div>
+							<p>Description of your first forum.</p>
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 topics">
+							4
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 posts">
+							9
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12 datetime">
+							<span>
+								<dfn>Last post</dfn> by <a href="#" class="color-focus">lutvia</a>
+								<a href="#" title=""><i class="fa fa-arrow-right grey"></i></a> <br>Wed Apr 09, 2014 2:28 pm</span>	
+						</div>
+					</div>
+					<div class="row cate-item">
+						<div class="col-md-7 col-sm-12 col-xs-12 title"  style="background-image: url(https://phpbb3.pixelgoose.com/styles/marina_teal/imageset/forum_read.svg);background-repeat: no-repeat;">
+							<div><a href="?view=viewforum">General Discussion</a></div>
+							<p>Description of your first forum.</p>
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 topics">
+							4
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 posts">
+							9
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12 datetime">
+							<span>
+								<dfn>Last post</dfn> by <a href="#" class="color-focus">lutvia</a>
+								<a href="#" title=""><i class="fa fa-arrow-right grey"></i></a> <br>Wed Apr 09, 2014 2:28 pm</span>	
+						</div>
+					</div>
+			    </div>
+			</div>
+			<!--  -->
+			<div class="panel panel-default panel-shadow categories">
+			    <div class="panel-heading bg-focus">
+			    	<div class="row">
+			    	    <div class="col-md-7 col-sm-12 col-xs-12">Your second category</div>
+			    	    <div class="col-md-1 col-sm-12 col-xs-12">Topics</div>
+			    	    <div class="col-md-1 col-sm-12 col-xs-12">Posts</div>
+			    	    <div class="col-md-3 col-sm-12 col-xs-12">Last post</div>
+			    		
+			    	</div>
+			    </div>
+			    <div class="panel-body">
+					<div class="row cate-item">
+						<div class="col-md-7 col-sm-12 col-xs-12 title"  style="background-image: url(https://phpbb3.pixelgoose.com/styles/marina_teal/imageset/forum_read.svg);background-repeat: no-repeat;">
+							<div><a href="?view=viewforum">Technical Support</a></div>
+							<p>Description of your first forum.</p>
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 topics">
+							4
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 posts">
+							9
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12 datetime">
+							<span>
+								<dfn>Last post</dfn> by <a href="#" class="color-focus">lutvia</a>
+								<a href="#" title=""><i class="fa fa-arrow-right grey"></i></a> <br>Wed Apr 09, 2014 2:28 pm</span>	
+						</div>
+					</div>
+					<div class="row cate-item">
+						<div class="col-md-7 col-sm-12 col-xs-12 title"  style="background-image: url(assets/img/forum_read.svg);background-repeat: no-repeat;">
+							<div><a href="?view=viewforum">Announcements</a></div>
+							<p>Description of your first forum.</p>
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 topics">
+							4
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 posts">
+							9
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12 datetime">
+							<span>
+								<dfn>Last post</dfn> by <a href="#" class="color-focus">lutvia</a>
+								<a href="#" title=""><i class="fa fa-arrow-right grey"></i></a> <br>Wed Apr 09, 2014 2:28 pm</span>	
+						</div>
+					</div>
+					<div class="row cate-item">
+						<div class="col-md-7 col-sm-12 col-xs-12 title"  style="background-image: url(https://phpbb3.pixelgoose.com/styles/marina_teal/imageset/forum_read.svg);background-repeat: no-repeat;">
+							<div><a href="?view=viewforum">Technical Support</a></div>
+							<p>Description of your first forum.</p>
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 topics">
+							4
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 posts">
+							9
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12 datetime">
+							<span>
+								<dfn>Last post</dfn> by <a href="#" class="color-focus">lutvia</a>
+								<a href="#" title=""><i class="fa fa-arrow-right grey"></i></a> <br>Wed Apr 09, 2014 2:28 pm</span>	
+						</div>
+					</div>
+			    </div>
+			</div>
+			<!-- Topics -->
+			<div class="panel panel-default panel-shadow categories topics">
+			    <div class="panel-heading bg-focus">
+			    	<div class="row">
+			    	    <div class="col-md-7 col-sm-12 col-xs-12">Topics</div>
+			    	    <div class="col-md-1 col-sm-12 col-xs-12">Replies</div>
+			    	    <div class="col-md-1 col-sm-12 col-xs-12">Views</div>
+			    	    <div class="col-md-3 col-sm-12 col-xs-12">Last post</div>
+			    		
+			    	</div>
+			    </div>
+			    <div class="panel-body">
+					<div class="row cate-item">
+						<div class="col-md-7 col-sm-12 col-xs-12 title"  style="background-image: url(https://phpbb3.pixelgoose.com/styles/marina_teal/imageset/forum_read.svg);background-repeat: no-repeat;">
+							<div>Your first forum</div>
+							<p>Description of your first forum.</p>
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 topics">
+							4
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 posts">
+							9
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12 datetime">
+							<span>
+								<dfn>Last post</dfn> by <a href="#" class="color-focus">lutvia</a>
+								<a href="#" title=""><i class="fa fa-arrow-right grey"></i></a> <br>Wed Apr 09, 2014 2:28 pm</span>	
+						</div>
+					</div>
+					<div class="row cate-item">
+						<div class="col-md-7 col-sm-12 col-xs-12 title"  style="background-image: url(assets/img/forum_read.svg);background-repeat: no-repeat;">
+							<div>Your second forum</div>
+							<p>Description of your first forum.</p>
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 topics">
+							4
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 posts">
+							9
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12 datetime">
+							<span>
+								<dfn>Last post</dfn> by <a href="#" class="color-focus">lutvia</a>
+								<a href="#" title=""><i class="fa fa-arrow-right grey"></i></a> <br>Wed Apr 09, 2014 2:28 pm</span>	
+						</div>
+					</div>
+					<div class="row cate-item">
+						<div class="col-md-7 col-sm-12 col-xs-12 title"  style="background-image: url(https://phpbb3.pixelgoose.com/styles/marina_teal/imageset/forum_read.svg);background-repeat: no-repeat;">
+							<div>Your third forum</div>
+							<p>Description of your first forum.</p>
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 topics">
+							4
+						</div>
+						<div class="col-md-1 col-sm-12 col-xs-12 posts">
+							9
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12 datetime">
+							<span>
+								<dfn>Last post</dfn> by <a href="#" class="color-focus">lutvia</a>
+								<a href="#" title=""><i class="fa fa-arrow-right grey"></i></a> <br>Wed Apr 09, 2014 2:28 pm</span>	
+						</div>
+					</div>
+			    </div>
+			</div>
+			<!--  -->
+			<div class="panel panel-default panel-shadow">
+			    <div class="panel-heading bg-dark">Who is online</div>
+			    <div class="panel-body">
+					<div class="block-body">
+						<div>There are <strong>4</strong> users online <br/>
+							<a href="" class="active-user"><img alt="" width="25" height="25" src="assets/img/avatar.png" class="avatar" title="tajmone - Original Poster"></a>
+							<a href=""  class="active-user"><img alt="" width="25" height="25" src="assets/img/avatar.png" class="avatar" title="tajmone - Original Poster"></a>
+							<a href=""  class="active-user"><img alt="" width="25" height="25" src="assets/img/avatar.png" class="avatar" title="tajmone - Original Poster"></a>
+							<a href=""  class="active-user"><img alt="" width="25" height="25" src="assets/img/avatar.png" class="avatar" title="tajmone - Original Poster"></a>
+						</div>
+						<div>There are <strong>4</strong> guests (based on users active over the past 5 minutes)</div>
+						<br>Registered users: No registered users
+<br><em>Legend: <a style="color:#AA0000" href="./memberlist.php?style=14&amp;mode=group&amp;g=5&amp;sid=e58aca3272f04100353c2c2e7ebc9c44">Administrators</a>, <a style="color:#00AA00" href="./memberlist.php?style=14&amp;mode=group&amp;g=4&amp;sid=e58aca3272f04100353c2c2e7ebc9c44">Global moderators</a></em></div>
+			    </div>
+			</div>
+			<!--  -->
+			<div class="panel panel-default panel-shadow">
+			    <div class="panel-heading bg-dark">Statistics</div>
+			    <div class="panel-body">
+					<div class="block-body">
+Total posts <strong>19</strong> • Total topics <strong>13</strong> • Total members <strong>11</strong> • Our newest member <strong><a href="./memberlist.php?style=14&amp;mode=viewprofile&amp;u=63&amp;sid=e58aca3272f04100353c2c2e7ebc9c44">Marina</a></strong><br><br>
+• It is currently Thu Dec 27, 2018 7:34 am
+</div>
+			    </div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-12 col-xs-12 sidebar">
+			<!--  -->
+			<div class="panel panel-default panel-shadow">
+			    <div class="panel-heading bg-dark">Top ideas</div>
+			    <div class="panel-body">
+					<ul class="list-sidebar">
+						<li>
+							<a href=""><img src="assets/img/avatar.png" alt=""></a>
+							<a href="">Key-String Gutter Active Line Number Color</a>
+						</li>
+						<li>
+						    <a href=""><img src="assets/img/avatar.png" alt=""></a>
+							<a href="">Activate spell check via command palette</a>
+						</li>
+						<li>
+							<a href=""><img src="assets/img/avatar.png" alt=""></a>
+							<a href="">Gutter Active Line Foreground Color</a>
+						</li>
+						<li>
+							<a href=""><img src="assets/img/avatar.png" alt=""></a>
+							<a href="">Sublime Merge: Single Line Add/Commit</a>
+						</li>
+						<li>
+							<a href=""><img src="assets/img/avatar.png" alt=""></a>
+							<a href="">How to edit tab appearance?</a>
+						</li>
+						<li>
+							<a href=""><img src="assets/img/avatar.png" alt=""></a>
+							<a href="">Alternative to Alt for collapsing folder tree</a>
+						</li>
+						<li>
+							<a href=""><img src="assets/img/avatar.png" alt=""></a>
+							<a href="">‘Drag text’ not implemented in Linux</a>
+						</li>
+						<li>
+							<a href=""><img src="assets/img/avatar.png" alt=""></a>
+							<a href="">Git File Status Badges</a>
+						</li>
+					</ul>
+					<div class="view_more text-center">
+						<button type="button" class="button-style">View more</button>
+					</div>
+			    </div>
+			</div>
+			<!--  -->
+			<div class="panel panel-default panel-shadow">
+			    <div class="panel-heading bg-dark">Tools</div>
+			    <div class="panel-body">
+			    	<ul>
+			    		<li><a href="https://ehkoo.com/bai-viet/sublime-text-3-tips-tricks" target="_blank">9+ THỦ THUẬT GIÚP SỬ DỤNG SUBLIME TEXT 3 HIỆU QUẢ HƠN</a></li>
+			    		<li><a href="http://www.saomai.com.vn/chia-se-kinh-nghiem/huong-dan-chuyen-tiep-cong-qua-nhieu-lop-mang-port-forwarrding-n69.html" target="_blank">Hướng dẫn chuyển tiếp cổng qua nhiều lớp mạng Port Forwarrding</a></li>
+			    		<li><a href="https://toidicode.com/cai-dat-va-su-dung-sftp-package-cho-sublime-text-92.html" target="_blank">Cài đặt và sử dụng SFTP package cho Sublime Text</a></li>
+			    	</ul>
+			    </div>
+			</div>
+			<!--  -->
+			<div class="panel panel-default panel-shadow">
+			    <div class="panel-heading bg-dark">Marina theme for phpBB3</div>
+			    <div class="panel-body">
+					<p>Marina by PixelGoose Studio is a clean, simple, fully responsive &amp; retina-ready theme for phpBB3.</p>
+<p>It’s created using the ideas and principles of the modern and so popular flat design. Marina is a great choice for building a community of any type.</p>
+			    </div>
+			</div>
+			<!--  -->
+			<div class="panel panel-default panel-shadow">
+			    <div class="panel-heading bg-dark">Marina theme for phpBB3</div>
+			    <div class="panel-body">
+					<h3>Functions</h3>
+					<p>Mutils categories</p>
+					<p>Manage Ads</p>
+					<p>Chat Room</p>
+			    </div>
+			</div>
+			<!--  -->
+		</div>
+	</div>
+</div>      <div id="Footer" class="bg-dark">
+	<div class="container color-lighter">
+		<div class="row">
+			<div class="col-md-4 col-sm-12 col-xs-12 widget-footer">
+				<h3 class="color-light">About us</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi perspiciatis delectus sequi quae eaque dolore provident adipisci quam!</p>
+				<p>Ea, neque, a repudiandae magnam quia ab reiciendis iusto veritatis veniam eius molestias vitae facilis id.</p>
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12 widget-footer">
+				<h3 class="color-light">About us</h3>
+				<ul>
+				<li><i class="fa fa-phone fa-lg fa-fw"></i> (777) 777-7777</li>
+				<li><i class="fa fa-map-marker fa-lg fa-fw"></i> 101 phpBB3 1st Street</li>
+				<li><i class="fa fa-lg fa-fw"></i> St. Petersburg, Florida, WA 00000, USA</li>
+				<li><i class="fa fa-envelope fa-lg fa-fw"></i> noreply@yourdomain.com</li>
+				</ul>
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12 widget-footer">
+				<h3 class="color-light">About us</h3>
+				<ul>
+				<li><i class="fa fa-chevron-circle-right fa-fw"></i>&nbsp;<a href="#">Home</a></li>
+				<li><i class="fa fa-chevron-circle-right fa-fw"></i>&nbsp;<a href="#">Faq</a></li>
+				<li><i class="fa fa-chevron-circle-right fa-fw"></i>&nbsp;<a href="#">Members</a></li>
+				<li><i class="fa fa-chevron-circle-right fa-fw"></i>&nbsp;<a href="#">Community rules</a></li>
+				<li><i class="fa fa-chevron-circle-right fa-fw"></i>&nbsp;<a href="#">Who we are and what we want?</a></li>
+				</ul>
+			</div>
+		</div>
+		<hr>
+		<div class="copyright">
+			<div class="pull-left">
+				Powered by <a href="http://www.phpbb.com/" class="color-light">phpBB</a>® Forum Software © phpBB Group<br>
+				phpBB 3 Marina theme by <a title="Premium phpBB Themes" class="color-focus" href="https://pixelgoose.com/">PixelGoose Studio</a>
+			</div>
+			<div class="pull-right"></div>
+		</div>
+	</div>
+</div>   </body>
+</html>
